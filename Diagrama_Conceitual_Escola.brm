@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<brModelo>
+  <modelo tipo="conceitual">
+    <entidades>
+      <entidade nome="Aluno">
+        <atributo nome="id_aluno"/>
+        <atributo nome="nome"/>
+        <atributo nome="cpf"/>
+        <atributo nome="data_nascimento"/>
+        <atributo nome="email"/>
+      </entidade>
+
+      <entidade nome="Professor">
+        <atributo nome="id_professor"/>
+        <atributo nome="nome"/>
+        <atributo nome="cpf"/>
+        <atributo nome="email"/>
+      </entidade>
+
+      <entidade nome="Curso">
+        <atributo nome="id_curso"/>
+        <atributo nome="nome"/>
+        <atributo nome="carga_horaria"/>
+      </entidade>
+
+      <entidade nome="Departamento">
+        <atributo nome="id_departamento"/>
+        <atributo nome="nome"/>
+      </entidade>
+
+      <entidade nome="Disciplina">
+        <atributo nome="id_disciplina"/>
+        <atributo nome="nome"/>
+        <atributo nome="carga_horaria"/>
+      </entidade>
+
+      <entidade nome="Horario">
+        <atributo nome="id_horario"/>
+        <atributo nome="dia_semana"/>
+        <atributo nome="hora_inicio"/>
+        <atributo nome="hora_fim"/>
+      </entidade>
+    </entidades>
+
+    <relacionamentos>
+      <relacionamento nome="Matricula">
+        <ligacao entidade="Aluno" cardinalidade="N"/>
+        <ligacao entidade="Disciplina" cardinalidade="N"/>
+      </relacionamento>
+
+      <relacionamento nome="Ministra">
+        <ligacao entidade="Professor" cardinalidade="1"/>
+        <ligacao entidade="Disciplina" cardinalidade="N"/>
+      </relacionamento>
+
+      <relacionamento nome="Pertence">
+        <ligacao entidade="Departamento" cardinalidade="1"/>
+        <ligacao entidade="Curso" cardinalidade="N"/>
+      </relacionamento>
+
+      <relacionamento nome="Possui">
+        <ligacao entidade="Disciplina" cardinalidade="N"/>
+        <ligacao entidade="Horario" cardinalidade="N"/>
+      </relacionamento>
+    </relacionamentos>
+  </modelo>
+</brModelo>
